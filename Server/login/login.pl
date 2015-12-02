@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perlml
 
 use CGI::Carp qw( fatalsToBrowser );
 use CGI;
@@ -8,8 +8,8 @@ use CGI::Cookie;
 
 BEGIN
 {
-	$DB_SQL_username = "DB USERNAME";
-	$DB_SQL_password = "DB PASSWORD";
+    $DB_SQL_username = "username";
+    $DB_SQL_password = "password";
 
     $q = new CGI;
     $username = $q->param('username');
@@ -35,7 +35,7 @@ BEGIN
             print "Invalid password";
             exit;
         }
-        my $dbh_random123164 = DBI->connect("DBI:mysql:database=ilankleiman;host=localhost", $DB_SQL_username, $DB_SQL_password, 
+        my $dbh_random123164 = DBI->connect("DBI:mysql:database=stockmarketsimulator;host=localhost", $DB_SQL_username, $DB_SQL_password, 
             {'RaiseError' => 1});
 
         my $sth_random123164 = $dbh_random123164->prepare("SELECT password, u_cookie, p_cookie FROM users WHERE username = ?");

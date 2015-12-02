@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perlml
 
 use CGI::Carp qw( fatalsToBrowser );
 use CGI;
@@ -15,7 +15,7 @@ require "login/cookie_login.pl";
 
 print $real_username;
 
-my $dbh_random123164t = DBI->connect("DBI:mysql:database=ilankleiman;host=localhost", "$DB_SQL_username", "$DB_SQL_password",
+my $dbh_random123164t = DBI->connect("DBI:mysql:database=stockmarketsimulator;host=localhost", "$DB_SQL_username", "$DB_SQL_password",
 {'RaiseError' => 1});
 
 my $sth_random123164t = $dbh_random123164t->prepare("SELECT cash FROM users WHERE u_cookie = ? AND p_cookie = ?");
@@ -26,3 +26,4 @@ while(my($dbg_cash) = $sth_random123164t->fetchrow_array())
 	print $dbg_cash;
 }
 $dbh_random123164t->disconnect();
+#

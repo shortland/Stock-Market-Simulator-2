@@ -1,55 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src='js/jquery.js'></script>
-	<script src='js/script.js'></script>
-	<link rel="stylesheet" type="text/css" href='css/style.css'>
+	<script type='text/javascript' src='js/jquery.js'></script>
+	<script type='text/javascript' src='js/jquery_colors.js'></script>
+	<!--<script type='text/javascript' src='js/defaultFunctions.js'></script>-->
+	<script type='text/javascript' src='js/globalList.js'></script>
+	<script type='text/javascript' src='js/buttonFunctions.js'></script>
+	<link rel="stylesheet" type="text/css" href='css/style.css'/>
 	<title></title>
 </head>
 <body>
 
-<div id='id01'></div>
+<!-- page is for global index only, put other stock options in other pages, not here -->
+<div id='content'></div>
+<h3>Global Index</h3>
+<div id='id01'>Loading...</div>
 
-<script>
-$(document).ready(function()
-{
-	$.ajax({ 
-	    type: 'GET', 
-	    url: 'http://ilankleiman.com/demo/stocks/beta/global_list.pl', 
-	    data: { get_param: 'value' }, 
-	  //  dataType: 'json',
-	    success: function (data) 
-	    { 
-			var datax = data;
-			parse_it(datax);
-	    }
-	});
-
-	function parse_it(data)
-	{
-		var arr = JSON.parse(data);
-	    var i;
-	    var out = "<table border='1px'><tr><td>Symbol</td><td>Name</td><td>Price</td><td>Bought</td><td>Sold</td></tr>";
-
-	    for(i = 0; i < arr.length; i++) 
-	    {
-	        out += "<tr><td>" + 
-	        arr[i].Symbol +
-	        "</td><td>" +
-	        arr[i].Name +
-	        "</td><td>" +
-	        arr[i].Price +
-	        "</td><td>" +
-	        arr[i].Bought +
-	        "</td><td>" +
-	        arr[i].Sold +
-	        "</td></tr>";
-	    }
-	    out += "</table>"
-	    document.getElementById("id01").innerHTML = out;
-	}
-});
-</script>
-<div></div>
 </body>
 </html>
