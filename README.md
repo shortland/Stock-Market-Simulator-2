@@ -17,3 +17,8 @@ Stock Market Simulator 1: [Stock Market Simulator 1](https://github.com/shortlan
 <h3>Client:</h3>
 - Written with HTML, CSS, JS; meaning it'll run on a browser.
 - Grabs server data, parses JSON and presents it in HTML.
+
+Not fully functional/public friendly: [Demo/Beta](http://ilankleiman.com/projects/StockMarketSimulator2/)
+
+
+<p>This isn't supposed to be a game on its own - it could be though. It's part of a larger game I'm working on.</p>
